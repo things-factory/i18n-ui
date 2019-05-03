@@ -4,6 +4,7 @@ import { store } from '@things-factory/shell'
 import { i18next } from '@things-factory/i18n-base'
 import { showSnackbar } from '@things-factory/layout-base'
 import { ADD_MORENDA } from '@things-factory/more-base'
+import { ADD_SETTING } from '@things-factory/setting-base'
 
 export default function bootstrap() {
   /* add language changed event handler */
@@ -25,6 +26,22 @@ export default function bootstrap() {
     morenda: {
       icon: 'language.png',
       name: 'set language',
+      template: html`
+        <select
+          @change="${e => {
+            i18next.changeLanguage(e.target.value)
+          }}"
+        >
+          <option value="en-US" ?selected=${i18next.language == 'en-US'}>English</option>
+          <option value="ko-KR" ?selected=${i18next.language == 'ko-KR'}>한국어</option>
+        </select>
+      `
+    }
+  })
+
+  store.dispatch({
+    type: ADD_SETTING,
+    setting: {
       template: html`
         <select
           @change="${e => {
