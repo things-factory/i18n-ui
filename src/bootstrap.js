@@ -42,15 +42,19 @@ export default function bootstrap() {
   store.dispatch({
     type: ADD_SETTING,
     setting: {
+      seq: 20,
       template: html`
-        <select
-          @change="${e => {
-            i18next.changeLanguage(e.target.value)
-          }}"
-        >
-          <option value="en-US" ?selected=${i18next.language == 'en-US'}>English</option>
-          <option value="ko-KR" ?selected=${i18next.language == 'ko-KR'}>한국어</option>
-        </select>
+        <div id="languageSetting">
+          <span>Change Language</span><br />
+          <select
+            @change="${e => {
+              i18next.changeLanguage(e.target.value)
+            }}"
+          >
+            <option value="en-US" ?selected=${i18next.language == 'en-US'}>English</option>
+            <option value="ko-KR" ?selected=${i18next.language == 'ko-KR'}>한국어</option>
+          </select>
+        </div>
       `
     }
   })
