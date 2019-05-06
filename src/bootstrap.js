@@ -44,8 +44,8 @@ export default function bootstrap() {
     setting: {
       seq: 20,
       template: html`
-        <div id="languageSetting">
-          <span>Change Language</span><br />
+        <div id="languageSetting" style="padding:30px;">
+          <span style="color: #c0504d;text-align: left;font-size: 1em;">Change Language</span><br />
           <select
             @change="${e => {
               i18next.changeLanguage(e.target.value)
