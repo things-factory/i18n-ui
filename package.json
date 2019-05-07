@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/i18n-ui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "src/index.js",
   "browser": "src/index.js",
   "things-factory": true,
@@ -16,6 +16,7 @@
     "@things-factory/i18n-base": "*",
     "@things-factory/layout-base": "*",
     "@things-factory/more-base": "*",
+    "@things-factory/setting-base": "*",
     "@things-factory/shell": "*"
   },
   "devDependencies": {
