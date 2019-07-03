@@ -5,6 +5,10 @@ import { i18next } from '@things-factory/i18n-base'
 import { ADD_SETTING } from '@things-factory/setting-base'
 
 export default function bootstrap() {
+  i18next.loadNamespaces('i18n-ui', err => {
+    err && console.error(err)
+  })
+
   /* add language changed event handler */
   i18next.on('languageChanged', e => {
     document.dispatchEvent(
