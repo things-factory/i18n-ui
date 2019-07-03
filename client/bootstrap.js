@@ -26,15 +26,18 @@ export default function bootstrap() {
     setting: {
       seq: 20,
       template: html`
-        <div id="languageSetting" style="padding:30px;">
-          <span style="color: #c0504d;text-align: left;font-size: 1em;">Change Language</span><br />
+        <div id="languageSetting" style="padding:30px;text-transform:capitalize">
+          <span style="color: #c0504d;text-align: left;font-size: 1em;"
+            ><i18n-msg msgid="label.change password"></i18n-msg></span
+          ><br />
           <select
-            @change="${e => {
+            @change=${e => {
               i18next.changeLanguage(e.target.value)
-            }}"
+            }}
           >
-            <option value="en-US" ?selected=${i18next.language == 'en-US'}>English</option>
+            <option value="en-US" ?selected=${i18next.language == 'en-US'}>english</option>
             <option value="ko-KR" ?selected=${i18next.language == 'ko-KR'}>한국어</option>
+            <option value="zh-CN" ?selected=${i18next.language == 'zh-CN'}>中文</option>
           </select>
         </div>
       `
