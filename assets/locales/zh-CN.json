@@ -1,6 +1,4 @@
 {
-  "zh-CN": {
-    "label.change language": "change language",
-    "text.current language": "中文"
-  }
+  "change language": "change language",
+  "language!": "中文"
 }

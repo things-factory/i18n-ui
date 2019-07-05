@@ -5,10 +5,6 @@ import { i18next } from '@things-factory/i18n-base'
 import { ADD_SETTING } from '@things-factory/setting-base'
 
 export default function bootstrap() {
-  i18next.loadNamespaces('i18n-ui', err => {
-    err && console.error(err)
-  })
-
   /* add language changed event handler */
   i18next.on('languageChanged', e => {
     document.dispatchEvent(
@@ -17,7 +13,7 @@ export default function bootstrap() {
           type: 'info',
           message: i18next.t('text.you.are.now.in', {
             state: {
-              text: i18next.t('text.current language')
+              text: i18next.t('language!')
             }
           })
         }
@@ -32,7 +28,7 @@ export default function bootstrap() {
       template: html`
         <div id="languageSetting" style="padding:30px;text-transform:capitalize">
           <span style="color: #c0504d;text-align: left;font-size: 1em;"
-            ><i18n-msg msgid="label.change language"></i18n-msg></span
+            ><i18n-msg msgid="change language"></i18n-msg></span
           ><br />
           <select
             @change=${e => {

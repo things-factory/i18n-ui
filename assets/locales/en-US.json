@@ -1,6 +1,4 @@
 {
-  "en-US": {
-    "label.change language": "change language",
-    "text.current language": "english"
-  }
+  "change language": "change language",
+  "language!": "english"
 }
