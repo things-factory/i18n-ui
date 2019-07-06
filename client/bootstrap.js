@@ -26,11 +26,10 @@ export default function bootstrap() {
     setting: {
       seq: 20,
       template: html`
-        <div id="languageSetting" style="padding:30px;text-transform:capitalize">
-          <span style="color: #c0504d;text-align: left;font-size: 1em;"
-            ><i18n-msg msgid="change language"></i18n-msg></span
-          ><br />
+        <setting-let>
+          <i18n-msg slot="title" msgid="change language"></i18n-msg>
           <select
+            slot="content"
             @change=${e => {
               i18next.changeLanguage(e.target.value)
             }}
@@ -39,7 +38,7 @@ export default function bootstrap() {
             <option value="ko-KR" ?selected=${i18next.language == 'ko-KR'}>한국어</option>
             <option value="zh-CN" ?selected=${i18next.language == 'zh-CN'}>中文</option>
           </select>
-        </div>
+        </setting-let>
       `
     }
   })
