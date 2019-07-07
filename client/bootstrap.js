@@ -10,7 +10,7 @@ export default function bootstrap() {
     document.dispatchEvent(
       new CustomEvent('notify', {
         detail: {
-          type: 'info',
+          level: 'info',
           message: i18next.t('text.you.are.now.in', {
             state: {
               text: i18next.t('language!')
