@@ -34,6 +34,7 @@ export default function bootstrap() {
               i18next.changeLanguage(e.target.value)
             }}
           >
+            <option value="ms-MY" ?selected=${i18next.language == 'ms-MY'}>Bahasa Malaysia</option>
             <option value="en-US" ?selected=${i18next.language == 'en-US'}>English</option>
             <option value="ko-KR" ?selected=${i18next.language == 'ko-KR'}>한국어</option>
             <option value="zh-CN" ?selected=${i18next.language == 'zh-CN'}>中文</option>
