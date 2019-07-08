@@ -21,25 +21,14 @@ export default function bootstrap() {
     )
   })
 
+  import('./setting-let/i18n-setting-let')
+
   store.dispatch({
     type: ADD_SETTING,
     setting: {
       seq: 20,
       template: html`
-        <setting-let>
-          <i18n-msg slot="title" msgid="change language"></i18n-msg>
-          <select
-            slot="content"
-            @change=${e => {
-              i18next.changeLanguage(e.target.value)
-            }}
-          >
-            <option value="ms-MY" ?selected=${i18next.language == 'ms-MY'}>Bahasa Malaysia</option>
-            <option value="en-US" ?selected=${i18next.language == 'en-US'}>English</option>
-            <option value="ko-KR" ?selected=${i18next.language == 'ko-KR'}>한국어</option>
-            <option value="zh-CN" ?selected=${i18next.language == 'zh-CN'}>中文</option>
-          </select>
-        </setting-let>
+        <i18n-setting-let></i18n-setting-let>
       `
     }
   })
