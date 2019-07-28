@@ -4,6 +4,8 @@ import { store } from '@things-factory/shell'
 import { i18next } from '@things-factory/i18n-base'
 import { ADD_SETTING } from '@things-factory/setting-base'
 
+import './setting-let/i18n-setting-let'
+
 export default function bootstrap() {
   /* add language changed event handler */
   i18next.on('languageChanged', e => {
@@ -20,8 +22,6 @@ export default function bootstrap() {
       })
     )
   })
-
-  import('./setting-let/i18n-setting-let')
 
   store.dispatch({
     type: ADD_SETTING,
