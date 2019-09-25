@@ -14,6 +14,7 @@ export class I18nSettingLet extends localize(i18next)(LitElement) {
             i18next.changeLanguage(e.target.value)
           }}
         >
+          <option value="" ?selected=${!i18next.language}></option>
           <option value="ms-MY" ?selected=${i18next.language == 'ms-MY'}>Bahasa Malaysia</option>
           <option value="en-US" ?selected=${i18next.language == 'en-US'}>English</option>
           <option value="ko-KR" ?selected=${i18next.language == 'ko-KR'}>한국어</option>
