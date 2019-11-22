@@ -13,9 +13,12 @@ export class I18nSelector extends localize(i18next)(LitElement) {
         }
         select {
           border: var(--i18n-selector-field-border, var(--input-field-border));
+          background-color: var(--i18n-selector-field-background-color, initial);
 
           font: var(--i18n-selector-field-font, var(--input-field-font));
+          font-size: var(--i18n-selector-field-font-size, 15px);
           width: var(--i18n-selector-field-width, 100%);
+          color: var(--i18n-selector-field-color, initial);
         }
         select:focus {
           border: 1px solid var(--focus-background-color);
