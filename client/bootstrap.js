@@ -1,10 +1,4 @@
-import { html } from 'lit-html'
-
-import { store } from '@things-factory/shell'
 import { i18next } from '@things-factory/i18n-base'
-import { ADD_SETTING } from '@things-factory/setting-base'
-
-import './setting-let/i18n-setting-let'
 
 export default function bootstrap() {
   /* add language changed event handler */
@@ -21,15 +15,5 @@ export default function bootstrap() {
         }
       })
     )
-  })
-
-  store.dispatch({
-    type: ADD_SETTING,
-    setting: {
-      seq: 20,
-      template: html`
-        <i18n-setting-let></i18n-setting-let>
-      `
-    }
   })
 }
